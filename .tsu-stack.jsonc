@@ -1,0 +1,15 @@
+{
+  "$schema": "https://raw.githubusercontent.com/tsu-moe/tsu-stack/main/tools/create-tsu-stack/schema.json",
+  "cliVersion": "0.0.0",
+  "displayName": "Tans Plus",
+  "projectName": "tans-plus",
+  "reproducibleCommand": "vpx create-tsu-stack@latest \"tans-plus\" --display-name \"Tans Plus\" --scope \"@tans\" --variant separate --install --git --setup local --ref 41b2969081dab791a934eb4c9cf39c8443cc51c7 --yes",
+  "scope": "@tans",
+  "source": {
+    "branch": "main",
+    "commit": "41b2969081dab791a934eb4c9cf39c8443cc51c7",
+    "repository": "tsu-moe/tsu-stack",
+    "requestedRef": "main"
+  },
+  "variant": "separate"
+}

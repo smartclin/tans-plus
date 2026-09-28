@@ -1,0 +1,3 @@
+{
+  "extends": "@tans/tsconfig/tsconfig.base.json"
+}

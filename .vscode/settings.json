@@ -1,0 +1,227 @@
+{
+  "[astro]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[graphql]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[handlebars]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[json5]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[mdx]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[mjml]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "biome.enabled": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.fixAll.oxc": "always",
+    "source.format.oxc": "always",
+    "source.removeUnusedImports": "explicit",
+    "source.sort.json": "always",
+    "source.sortImports": "explicit"
+  },
+  // set oxfmt as default formatter
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "editor.formatOnPaste": true,
+  // format on save and paste
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  // Add back TypeScript IntelliSense autocomplete, see why this is necessary: https://github.com/microsoft/vscode/issues/315373#issuecomment-4499000535
+  "editor.quickSuggestions": {
+    "comments": "inline",
+    "other": "on",
+    "strings": "on"
+  },
+  "eslint.enable": false,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .editorconfig, .gitattributes, oxfmt*, oxlint*, .oxfmt*, .oxlint*, commitlint.config*, bun.lock",
+    "tsconfig.json": "tsconfig.*.json, env.d.ts",
+    "vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*"
+  },
+  // use LF line endings
+  "files.eol": "\n",
+  "files.readonlyInclude": {
+    "**/.tanstack/**/*": true,
+    "**/routeTree.gen.ts": true,
+    "bun.lock": true,
+    "pnpm-lock.yaml": true
+  },
+  "files.watcherExclude": {
+    "**/.tanstack/**/*": true,
+    "**/routeTree.gen.ts": true,
+    "bun.lock": true,
+    "pnpm-lock.yaml": true
+  },
+  "git.optimisticUpdate": true,
+  // Nest config files together in the explorer
+  // Use tsgo for faster TypeScript and JavaScript language features
+  "js/ts.experimental.useTsgo": true,
+  // Use non-relative (absolute) imports by default
+  "js/ts.preferences.importModuleSpecifier": "non-relative",
+  // When auto-importing, prefer to include the file extension for JavaScript and TypeScript files
+  "js/ts.preferences.importModuleSpecifierEnding": "minimal",
+  // When "Go to Definition" is triggered on a symbol, prefer going to the source file instead of the declaration file (if available).
+  "js/ts.preferGoToSourceDefinition": true,
+  "js/ts.suggest.completeFunctionCalls": true,
+  // When a file is moved, update the imports to reflect the new location
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  // Allow loading these json schemas
+  "json.schemas": [
+    {
+      "fileMatch": ["components.json"],
+      "url": "https://ui.shadcn.com/schema.json"
+    },
+    {
+      "fileMatch": ["packages/i18n/messages/*.json"],
+      "url": "https://inlang.com/schema/inlang-message-format"
+    },
+    {
+      "fileMatch": [".fallowrc.jsonc", ".fallowrc.json"],
+      "url": "https://raw.githubusercontent.com/fallow-rs/fallow/main/schema.json"
+    }
+  ],
+  // vite+ for npm scripts
+  "npm.scriptRunner": "vp",
+  // enable oxlint + oxfmt
+  "oxc.enable": true,
+  // oxfmt via vite+
+  "oxc.fmt.configPath": "./vite.config.ts",
+  // disable prettier, eslint, biome
+  "prettier.enable": false,
+  "search.exclude": {
+    "**/.tanstack/**/*": true,
+    "**/routeTree.gen.ts": true,
+    "bun.lock": true,
+    "pnpm-lock.yaml": true
+  },
+  "tailwindCSS.classAttributes": ["class", "className", "ngClass", "class:list", "tw", "clsx"],
+  "tailwindCSS.classFunctions": ["tw", "clsx", "cva", "cn", "tv", "classNames", "classList"],
+  "tailwindCSS.codeActions": true,
+  "tailwindCSS.colorDecorators": true,
+  "tailwindCSS.emmetCompletions": true,
+  // ===== Tailwind Experimental =====
+  "tailwindCSS.experimental.configFile": {
+    "./apps/web/src/index.css": "src/**/*.{ts,tsx,js,jsx}"
+  },
+  "tailwindCSS.files.exclude": [
+    "**/.git/**",
+    "**/node_modules/**",
+    "**/.hg/**",
+    "**/.svn/**",
+    "**/.output/**",
+    "**/dist/**",
+    "**/coverage/**"
+  ],
+  "tailwindCSS.hovers": true,
+  // ===== Tailwind CSS IntelliSense =====
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "javascript": "html",
+    "javascriptreact": "html",
+    "jsx": "html",
+    "plaintext": "html",
+    "tsx": "html",
+    "typescript": "html",
+    "typescriptreact": "html"
+  },
+  "tailwindCSS.lint.cssConflict": "warning",
+  "tailwindCSS.lint.deprecatedAtRule": "warning",
+  "tailwindCSS.lint.invalidApply": "error",
+  "tailwindCSS.lint.invalidConfigPath": "error",
+  // ===== Tailwind Linting Rules =====
+  "tailwindCSS.lint.invalidScreen": "error",
+  "tailwindCSS.lint.invalidTailwindDirective": "error",
+  "tailwindCSS.lint.invalidVariant": "error",
+  "tailwindCSS.lint.recommendedVariantOrder": "warning",
+  "tailwindCSS.lint.suggestCanonicalClasses": "warning",
+  "tailwindCSS.lint.usedBlocklistedClass": "warning",
+  "tailwindCSS.rootFontSize": 16,
+  "tailwindCSS.showPixelEquivalents": true,
+  "tailwindCSS.suggestions": true,
+  "tailwindCSS.validate": true,
+  // ===== Telemetry =====
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  // ===== Terminal =====
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.fontFamily": "'JetBrains Mono', 'Fira Code', monospace",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.shellIntegration.enabled": true,
+  "terminal.integrated.shellIntegration.environmentReporting": true,
+  "terminal.integrated.smoothScrolling": true,
+  // Terminal Suggestions
+  "terminal.integrated.suggest.enabled": true,
+  "terminal.integrated.suggest.quickSuggestions": {
+    "arguments": "on",
+    "commands": "on",
+    "unknown": "off"
+  },
+  // ===== Testing =====
+  "testing.automaticallyOpenPeekView": "never",
+  "testing.automaticallyOpenTestResults": "openOnTestStart",
+  "workbench.activityBar.location": "default",
+  // ===== Workbench =====
+  "workbench.colorTheme": "Visual Studio Light",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.sideBar.location": "left",
+  "workbench.startupEditor": "none",
+  "zenMode.fullScreen": false,
+  // ===== Zen Mode =====
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideStatusBar": false
+}

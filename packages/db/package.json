@@ -1,0 +1,40 @@
+{
+  "name": "@tans/db",
+  "private": true,
+  "type": "module",
+  "imports": {
+    "#@/*": "./src/*.ts"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema/index.ts"
+  },
+  "scripts": {
+    "auth:generate": "pnpm dotenvx run -f ../env/.env -- vpx auth@latest generate --config ../auth/src/index.ts -y --output ./src/schema/auth.schema.ts",
+    "check": "vp check --fix",
+    "db": "pnpm dotenvx run -f ../env/.env -- drizzle-kit",
+    "db:dev:start": "docker compose -f docker-compose.dev.yaml up -d",
+    "db:dev:stop": "docker compose -f docker-compose.dev.yaml stop",
+    "seed": "pnpm dotenvx run -f ../env/.env -- node --import tsx src/seed/index.ts"
+  },
+  "dependencies": {
+    "@faker-js/faker": "catalog:",
+    "@tans/logger": "workspace:*",
+    "drizzle-orm": "catalog:",
+    "postgres": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@dotenvx/dotenvx": "catalog:",
+    "@tans/env": "workspace:*",
+    "@tans/tsconfig": "workspace:*",
+    "@types/node": "catalog:",
+    "drizzle-kit": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:",
+    "xlsx": "catalog:"
+  },
+  "peerDependencies": {
+    "@tanstack/react-start": "catalog:"
+  }
+}

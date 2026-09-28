@@ -1,0 +1,35 @@
+{
+  "name": "@tans/api",
+  "type": "module",
+  "imports": {
+    "#@/*": "./src/*.ts"
+  },
+  "exports": {
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {
+    "test:unit": "vp test"
+  },
+  "dependencies": {
+    "@orpc/client": "catalog:",
+    "@orpc/server": "catalog:",
+    "@orpc/tanstack-query": "catalog:",
+    "@tanstack/react-start": "catalog:",
+    "@tans/auth": "workspace:*",
+    "@tans/core": "workspace:*",
+    "@tans/db": "workspace:*",
+    "@tans/env": "workspace:*",
+    "@tans/logger": "workspace:*",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@tans/tsconfig": "workspace:*",
+    "@types/node": "catalog:",
+    "hono": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vite-plus": "catalog:"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "@tans/tsconfig/tsconfig.base.json",
+  "compilerOptions": {
+    "paths": {
+      "@tans/ui/*": ["./*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

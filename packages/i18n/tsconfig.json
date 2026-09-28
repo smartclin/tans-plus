@@ -1,0 +1,7 @@
+{
+  "extends": "@tans/tsconfig/tsconfig.base.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "noEmit": true
+  }
+}

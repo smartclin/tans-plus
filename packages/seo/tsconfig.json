@@ -1,0 +1,4 @@
+{
+  "extends": "@tans/tsconfig/tsconfig.base.json",
+  "exclude": ["src/next-js-seo/**/*"]
+}

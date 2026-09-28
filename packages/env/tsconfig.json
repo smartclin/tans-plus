@@ -1,0 +1,6 @@
+{
+  "extends": "@tans/tsconfig/tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["node", "vite-plus/client"]
+  }
+}
