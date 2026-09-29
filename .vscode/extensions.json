@@ -34,9 +34,5 @@
     "oderwat.indent-rainbow"
   ],
   // Disabled in settings.json; installing them only fights oxfmt/oxlint
-  "unwantedRecommendations": [
-    "esbenp.prettier-vscode",
-    "dbaeumer.vscode-eslint",
-    "biomejs.biome"
-  ]
+  "unwantedRecommendations": ["esbenp.prettier-vscode", "dbaeumer.vscode-eslint", "biomejs.biome"]
 }

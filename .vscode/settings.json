@@ -183,7 +183,11 @@
   "tailwindCSS.emmetCompletions": true,
   // ===== Tailwind Experimental =====
   "tailwindCSS.experimental.configFile": {
-    "apps/web/src/shared/styles/app.css": ["apps/web/src/**", "packages/ui/src/**", "packages/ui/styles/**"]
+    "apps/web/src/shared/styles/app.css": [
+      "apps/web/src/**",
+      "packages/ui/src/**",
+      "packages/ui/styles/**"
+    ]
   },
   "tailwindCSS.files.exclude": [
     "**/.git/**",

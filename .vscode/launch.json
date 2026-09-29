@@ -34,7 +34,17 @@
       "request": "launch",
       "cwd": "${workspaceFolder}",
       "runtimeExecutable": "pnpm",
-      "runtimeArgs": ["dotenvx", "run", "-f", "./packages/env/.env", "--", "vp", "test", "--run", "${relativeFile}"],
+      "runtimeArgs": [
+        "dotenvx",
+        "run",
+        "-f",
+        "./packages/env/.env",
+        "--",
+        "vp",
+        "test",
+        "--run",
+        "${relativeFile}"
+      ],
       "console": "integratedTerminal",
       "skipFiles": ["<node_internals>/**"],
       "autoAttachChildProcesses": true
