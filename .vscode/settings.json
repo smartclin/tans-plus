@@ -47,6 +47,9 @@
   "[svelte]": {
     "editor.defaultFormatter": "oxc.oxc-vscode"
   },
+  "[tailwindcss]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
   "[toml]": {
     "editor.defaultFormatter": "oxc.oxc-vscode"
   },
@@ -85,27 +88,44 @@
   },
   "eslint.enable": false,
   "explorer.fileNesting.enabled": true,
+  // Nest config files together in the explorer
   "explorer.fileNesting.patterns": {
+    ".env": ".env.*",
+    "AGENTS.md": ".agents, CLAUDE.md, .cursorrules, .github/copilot-instructions.md",
     "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .editorconfig, .gitattributes, oxfmt*, oxlint*, .oxfmt*, .oxlint*, commitlint.config*, bun.lock",
     "tsconfig.json": "tsconfig.*.json, env.d.ts",
     "vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*"
   },
+  // Tailwind v4 has no config file: treat CSS as tailwindcss so `@theme`/`@apply` resolve
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
   // use LF line endings
   "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  // Generated or vendored output: read-only, not watched, not searched
   "files.readonlyInclude": {
     "**/.tanstack/**/*": true,
     "**/routeTree.gen.ts": true,
     "bun.lock": true,
+    "packages/db/src/schema/auth.ts": true,
+    "packages/i18n/src/paraglide/**": true,
     "pnpm-lock.yaml": true
   },
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
   "files.watcherExclude": {
+    "**/.output/**": true,
     "**/.tanstack/**/*": true,
+    "**/.vite/**": true,
+    "**/dist/**": true,
+    "**/node_modules/**": true,
     "**/routeTree.gen.ts": true,
     "bun.lock": true,
     "pnpm-lock.yaml": true
   },
+  "git.branchProtection": ["main"],
   "git.optimisticUpdate": true,
-  // Nest config files together in the explorer
   // Use tsgo for faster TypeScript and JavaScript language features
   "js/ts.experimental.useTsgo": true,
   // Use non-relative (absolute) imports by default
@@ -130,8 +150,13 @@
     {
       "fileMatch": [".fallowrc.jsonc", ".fallowrc.json"],
       "url": "https://raw.githubusercontent.com/fallow-rs/fallow/main/schema.json"
+    },
+    {
+      "fileMatch": ["tsconfig.json", "tsconfig.*.json"],
+      "url": "https://json.schemastore.org/tsconfig"
     }
   ],
+  "npm.packageManager": "pnpm",
   // vite+ for npm scripts
   "npm.scriptRunner": "vp",
   // enable oxlint + oxfmt
@@ -141,9 +166,14 @@
   // disable prettier, eslint, biome
   "prettier.enable": false,
   "search.exclude": {
+    "**/.output": true,
     "**/.tanstack/**/*": true,
+    "**/.vite": true,
+    "**/coverage": true,
+    "**/dist": true,
     "**/routeTree.gen.ts": true,
     "bun.lock": true,
+    "packages/i18n/src/paraglide": true,
     "pnpm-lock.yaml": true
   },
   "tailwindCSS.classAttributes": ["class", "className", "ngClass", "class:list", "tw", "clsx"],
@@ -153,7 +183,7 @@
   "tailwindCSS.emmetCompletions": true,
   // ===== Tailwind Experimental =====
   "tailwindCSS.experimental.configFile": {
-    "./apps/web/src/index.css": "src/**/*.{ts,tsx,js,jsx}"
+    "apps/web/src/shared/styles/app.css": ["apps/web/src/**", "packages/ui/src/**", "packages/ui/styles/**"]
   },
   "tailwindCSS.files.exclude": [
     "**/.git/**",
@@ -191,17 +221,8 @@
   "tailwindCSS.showPixelEquivalents": true,
   "tailwindCSS.suggestions": true,
   "tailwindCSS.validate": true,
-  // ===== Telemetry =====
-  "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.defaultProfile.linux": "zsh",
-  // ===== Terminal =====
-  "terminal.integrated.defaultProfile.osx": "zsh",
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "terminal.integrated.fontFamily": "'JetBrains Mono', 'Fira Code', monospace",
-  "terminal.integrated.fontSize": 14,
   "terminal.integrated.shellIntegration.enabled": true,
   "terminal.integrated.shellIntegration.environmentReporting": true,
-  "terminal.integrated.smoothScrolling": true,
   // Terminal Suggestions
   "terminal.integrated.suggest.enabled": true,
   "terminal.integrated.suggest.quickSuggestions": {
@@ -212,16 +233,12 @@
   // ===== Testing =====
   "testing.automaticallyOpenPeekView": "never",
   "testing.automaticallyOpenTestResults": "openOnTestStart",
-  "workbench.activityBar.location": "default",
-  // ===== Workbench =====
-  "workbench.colorTheme": "Visual Studio Light",
-  "workbench.editor.highlightModifiedTabs": true,
-  "workbench.editor.tabSizing": "shrink",
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.sideBar.location": "left",
-  "workbench.startupEditor": "none",
-  "zenMode.fullScreen": false,
-  // ===== Zen Mode =====
-  "zenMode.hideLineNumbers": false,
-  "zenMode.hideStatusBar": false
+  // Prompt to use the workspace TypeScript instead of the VS Code bundled one
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  // ===== TypeScript =====
+  // This monorepo loads many projects at once; the default 3 GB budget runs out
+  "typescript.tsserver.maxTsServerMemory": 8192,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "workbench.editor.highlightModifiedTabs": true
 }
