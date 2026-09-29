@@ -1,0 +1,48 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "dev",
+      "type": "shell",
+      "command": "pnpm dev",
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "group": "dev",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "check",
+      "type": "shell",
+      "command": "pnpm check",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": ["$tsc"]
+    },
+    {
+      "label": "fix",
+      "type": "shell",
+      "command": "pnpm fix",
+      "problemMatcher": ["$tsc"]
+    },
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "pnpm build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$tsc"]
+    },
+    {
+      "label": "test:unit",
+      "type": "shell",
+      "command": "pnpm test:unit:run",
+      "problemMatcher": []
+    }
+  ]
+}

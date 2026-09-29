@@ -2,8 +2,20 @@
   "recommendations": [
     // Vite+ Extensions
     "VoidZero.vite-plus-extension-pack",
+    // Formatting/linting (oxfmt + oxlint) - the only formatter this repo uses
+    "oxc.oxc-vscode",
+    // Styling
+    "bradlc.vscode-tailwindcss",
     // Markdown
     "unifiedjs.vscode-mdx",
+    // Testing
+    "vitest.explorer",
+    "ms-playwright.playwright",
+    // i18n (Paraglide/inlang messages)
+    "inlang.vs-code-extension",
+    // Env files + Docker
+    "mikestead.dotenv",
+    "ms-azuretools.vscode-docker",
     // Git
     "usernamehw.errorlens",
     "eamodio.gitlens",
@@ -15,9 +27,12 @@
     "kisstkondoros.vscode-gutter-preview",
     // Code Visualizations/Highlighting
     "johnsoncodehk.vscode-tsconfig-helper",
+    "YoavBls.pretty-ts-errors",
     "naumovs.color-highlight",
     "wayou.vscode-todo-highlight",
     "ibm.output-colorizer",
     "oderwat.indent-rainbow"
-  ]
+  ],
+  // Disabled in settings.json; installing them only fights oxfmt/oxlint
+  "unwantedRecommendations": ["esbenp.prettier-vscode", "dbaeumer.vscode-eslint", "biomejs.biome"]
 }
